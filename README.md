@@ -3,6 +3,7 @@
 Repository for facemask prototype code
 
 ## Wiring 
+![docu](docu.jpg)
 
 ## How to use
 
