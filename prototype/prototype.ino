@@ -44,7 +44,7 @@ volatile uint32_t last_btn_press = 0;
 
 void setup() {
   // put your setup code here, to run once:
-  // Serial.begin(152000);
+  Serial.begin(152000);
 
   // setup sensor inputs
 
@@ -149,6 +149,9 @@ void run_pump(motor_t* pump){
 
     if ((now - pump_run_start) > PUMP_DURATION_MS)
     {
+      pump->pwm_value = 0;
+      analogWrite(pump->pwm_pin, pump->pwm_value);
+      
       pump_is_running = false;
       btn_press_flag = false;
 
